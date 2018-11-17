@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Firma DRAGON</title>
+
+    <link rel="stylesheet" href="style.css">
+    
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css" integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
+        crossorigin="" />
+    <link href="vendor/lightbox2/css/lightbox.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Merriweather|Philosopher" rel="stylesheet">
+    
+    <script src="vendor/lightbox2/js/lightbox-plus-jquery.min.js"></script>
+    <script src="https://unpkg.com/leaflet@1.3.4/dist/leaflet.js" integrity="sha512-nMMmRyTVoLYqjP9hrbed9S+FzjZHW5gY1TWCHA5ckwXZBadntCNs8kEqAWdrb9O7rxbCaA4lKTIWjDXZxflOcA=="
+        crossorigin=""></script>
+    <script src="script.js"></script>
+</head>
+
+<body onload="init();">
+    <section id="banner" class="banner">
+        <img class="banner-img" src="img/dragon.png"></img>
+        <div class="banner-txt">
+            <p class="banner-small">Firma</p>
+            <p class="banner-big">DRAGON</p>
+        </div>
+    </section>
+    <nav>
+        <div><a href="#about">O nas</a></div>
+        <div><a href="#offer">Oferta</a></div>
+        <div><a href="#photos">Zdjęcia</a></div>
+        <div><a href="#location">Lokalizacja</a></div>
+        <div><a href="#map">Na mapie</a></div>
+        <div><a href="#hours">Godziny otwarcia</a></div>
+        <div><a href="#contact">Kontakt</a></div>
+    </nav>
+    <section id="slogan" class="section-white">
+        <span class="slogan-txt">Firma DRAGON zaprasza na zdrowe, smaczne i niedrogie posiłki</span>
+    </section>
+    <main id="about" class="section-white">
+        <h2>O nas</h2>
+        <ul>
+            <li>Jesteśmy rodzinną, wrocławską firmą, która zaczynała kilkanaście lat temu od prowadzenia bufetów
+                szkolnych i drobnych imprez cateringowych</li>
+            <li>Specjalizujemy się w posiłkach obiadowych, oferując także śniadania, przekąski a ponadto serwujemy
+                dania kuchni polskiej i europejskiej podczas imprez okolicznościowych</li>
+            <li>Naszym celem jest przygotowanie smacznych, zdrowych posiłków odpowiadających gustom i upodobaniom
+                kulinarnym klientów</li>
+            <li>Dysponujemy lokalem w centrum Wrocławia – Krzyki przy ul. Kruczej </li>
+        </ul>
+    </main>
+    <section id="offer" class="section-white">
+        <h2>Oferta</h2>
+        <ul>
+            <li>Obiady serwowane w stołówce i na wynos</li>
+            <li>Śniadania, ciepłe i zimne przekąski, kanapki, desery</li>
+            <li>Organizacja przyjęć komunijnych, styp, konsolacji , spotkań okolicznościowych, rocznic w naszej bazowej
+                lokalizacji (maks. do 40 osób)</li>
+            <li>Catering zewnętrzny do szkół, przedszkoli, firm</li>
+        </ul>
+    </section>
+    <section id="photos" class="section-white">
+        <h2>Zdjęcia</h2>
+        <div class="gallery">
+            <a href="img/main.jpg" data-lightbox="place" class="item-a"><img src="img/thumb/main.jpg" class="shadowed"></img></a>
+            <a href="img/1.jpg" data-lightbox="place" class="item-b"><img src="img/thumb/1.jpg" class="shadowed"></img></a>
+            <a href="img/2.jpg" data-lightbox="place" class="item-c"><img src="img/thumb/2.jpg" class="shadowed"></img></a>
+            <a href="img/3.jpg" data-lightbox="place" class="item-d"><img src="img/thumb/3.jpg" class="shadowed"></img></a>
+            <a href="img/4.jpg" data-lightbox="place" class="item-e"><img src="img/thumb/3.jpg" class="shadowed"></img></a>
+        </div>
+    </section>
+    <section id="location" class="section-white">
+        <h2>Lokalizacja</h2>
+        <ul>
+            <li>Stołówka znajduje się w VII LO we Wrocławiu (pierwsze wejście od ulicy Jemiołowej)</li>
+            <li>Adres: Wrocław ul. Krucza 46</li>
+            <li>W najbliższej okolicy są łatwo dostępne, niepłatne miejsca parkingowe </li>
+        </ul>
+    </section>
+    <!-- <section id="location-photo" class="section-white">
+        <img class="shadowed" src="img/4.jpg"></img>
+    </section> -->
+    <section id="map" class="section-white">
+        <div id="mapid"></div>
+    </section>
+    <section id="hours" class="section-white">
+        <h2>Godziny otwarcia</h2>
+        <ul>
+            <li>Stołówka jest otwarta od poniedziałku do piątku</li>
+            <li>Godziny otwarcia 8.00-16.00</li>
+            <li>Imprezy okolicznościowe - do uzgodnienia, (także godziny popołudniowo-wieczorne i weekendy)</li>
+        </ul>
+    </section>
+    <section id="contact" class="section-white">
+        <h2>Kontakt</h2>
+        <ul>
+            <li>Email: <b>catering7dragon@gmail.com</b></li>
+            <li>Tel. <b>……………………….</b></li>
+        </ul>
+    </section>
+    <footer class="section-black">
+        <!-- <h2>Zostaw wiadomość</h2>
+
+        <div class="form-container">
+            <form method="post" id="reused_form">
+                <label for="name">Imię</label>
+                <input id="name" type="text" name="Name" required maxlength="50">
+                <label for="email">Email</label>
+                <input id="email" type="email" name="Email" required maxlength="50">
+                <label for="message">Wiadomość</label>
+                <textarea id="message" name="Message" rows="10" maxlength="6000" required></textarea>
+                <div class="g-recaptcha" data-sitekey="Insert your recaptcha site key here"></div>
+                <button class="button-primary" type="submit">Wyślij</button>
+            </form>
+            <div id="success_message" style="display:none">
+                <h3>Submitted the form successfully!</h3>
+                <p> We will get back to you soon. </p>
+            </div>
+            <div id="error_message" style="width:100%; height:100%; display:none; ">
+                <h3>Error</h3> Sorry there was an error sending your form.
+            </div>
+        </div> -->
+    </footer>
+</body>
+
+</html>
